@@ -1,0 +1,24 @@
+name: Development workflow
+on: [push]
+jobs:
+  build_test_deploy:
+    runs-on: ubuntu-latest
+    name: Building, testing and deploying the React app to Netlify
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 17.x
+      - run: npm install
+      - run: npm run build --if-present
+      - run: npm test
+      - name: Deploy to Netlify
+        uses: netlify/actions/cli@master
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        with:
+          args: deploy --dir=build --prod
+          secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
