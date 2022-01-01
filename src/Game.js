@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import Board from './Board';
 import {checkCode, generateRandomCode} from './CodeChecker';
 import ColorCode from './ColorCode';
@@ -8,7 +8,7 @@ export default function Game() {
     const codeLength = 5;
     const nbAttempts = 8;
     const colors = ["red", "green", "blue", "yellow", "orange", "grey", "pink", "violet"];
-    const [secretCode, setSecretCode] = useState([]);
+    const [secretCode, setSecretCode] = useState(generateRandomCode(colors, codeLength));
     const [inputCode, setInputCode] = useState([]);
     const [previousAttempts, setPreviousAttempts] = useState([]);
     const [gameOver, setGameOver] = useState(false);
@@ -56,11 +56,6 @@ export default function Game() {
         setWon(false);
         setShowSolution(false);
     }
-
-    // start new game at first render
-    useEffect(() => {
-        newGame();
-    }, []);
 
     return (
         <React.Fragment>
