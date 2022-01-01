@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Board from './Board';
+import {checkCode} from './CodeChecker';
 import ColorCode from './ColorCode';
 import Colors from './Colors';
 
@@ -23,8 +24,8 @@ export default function Game() {
     }
 
     function check(code) {
-        // TODO:check
-        const feedback = {bulls: 0, cows: 0};
+        // check
+        const feedback = checkCode(code, secretCode);
         // win case
         if (feedback.bulls === codeLength) {
             setWon(true);
