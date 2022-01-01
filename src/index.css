@@ -39,3 +39,113 @@ footer {
 .rules:hover {
   text-decoration: underline;
 }
+
+.color {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #777;
+  margin-right: 8px;
+  border-radius: 21px;
+  background-color: white;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.color span {
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.color.select {
+  cursor: pointer;
+}
+
+.color.select:hover {
+  border: 2px solid black;
+  border-radius: 21px;
+}
+
+.colors {
+  height: 80px;
+  padding-top: 5px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+  margin-top: 5px;
+}
+
+th, td {
+  text-align: center;
+  vertical-align: middle;
+  height: 60px;
+}
+
+.codeCell {
+  width: 250px;
+  text-align: left;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.currentRow, .colors {
+  background-color: white;
+  border-style: solid;
+  border-width: thin;
+  border-color: rgb(28, 9, 100);
+}
+
+.label {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+button {
+  background-color: #266ac4;
+  border: none;
+  color: white;
+  padding: 6px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #164c92;
+  color: white;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.message {
+  border: none;
+  padding: 6px 16px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 2px;
+  border-radius: 4px;
+  color: white;
+}
+
+.win {
+  background-color: rgb(2, 99, 2);
+}
+
+.lost {
+  background-color: rgb(177, 0, 0);
+}

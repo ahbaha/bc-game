@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Game from './Game';
 
 function Rules() {
   const [show, setShow] = useState(false);
@@ -24,6 +25,7 @@ function App() {
     <div>
       <h1>Bulls and Cows Game</h1>
       <Rules />
+      <Game />
       <footer>Ahmed Baha Ben Jmaa</footer>
     </div>
   );
