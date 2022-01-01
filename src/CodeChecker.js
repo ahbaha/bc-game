@@ -21,3 +21,11 @@ export function checkCode(code, secretCode) {
 
     return feedback;
 }
+
+export function generateRandomCode(allColors, codeLength) {
+    const randomCode = [];
+    for (let i=0; i<codeLength; i++) {
+        randomCode.push(allColors[Math.floor(Math.random() * (allColors.length - 1))]);
+    }
+    return randomCode;
+}
